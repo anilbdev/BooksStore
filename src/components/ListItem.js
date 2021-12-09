@@ -4,7 +4,6 @@ import { Button } from '..'
 import { useDispatch, useSelector } from 'react-redux'
 //custom import
 import { addToCart, removeFromCart } from '..'
-
 const ListItem = ({ book }) => {
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cartReducer)
@@ -23,26 +22,24 @@ const ListItem = ({ book }) => {
                     <Text style={{ fontSize: 20 }}>{book.auther}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity
-                        onPress={() => dispatch(addToCart(book))}
-                    >
-                        {/* if book in cart array present in cart? remove :add*/}
-                        {cart.includes(book)
-                            ? <Button label='Remove -' buttonColor='orange' />
-                            : <Button label='Add +' buttonColor='#4a8bcb' />}
-
-
-                    </TouchableOpacity>
-
+                    {/* if book in cart array present in cart? remove :add*/}
+                    {cart.includes(book)
+                        ? <TouchableOpacity
+                            onPress={() => dispatch(removeFromCart(book))}
+                        >
+                            <Button label='Remove -' buttonColor='orange' />
+                        </TouchableOpacity>
+                        : <TouchableOpacity
+                            onPress={() => dispatch(addToCart(book))}
+                        >
+                            <Button label='Add +' buttonColor='#4a8bcb' />
+                        </TouchableOpacity>}
                 </View>
-
             </View>
         </View>
     )
 }
-
 export default ListItem
-
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row'
@@ -59,5 +56,4 @@ const styles = StyleSheet.create({
         padding: 10
     },
     buttonContainer: {}
-
 })

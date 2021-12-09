@@ -5,7 +5,9 @@ import { StyleSheet, Text, View,Button } from 'react-native'
 import {increment,decrement} from '../redux/reducer'
 
 const CartScreen = () => {
-    const counter =useSelector(state=>state.counter)
+    const counter =useSelector((state) =>{
+      
+        return state.counterReducer.counter})
     const dispatch = useDispatch()
     return (
         <View>

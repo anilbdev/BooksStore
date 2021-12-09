@@ -21,8 +21,9 @@ const initialState = {
     counter: 0
 }
 
-//Root reducer
-const rootReducer = (state = initialState, action) => {
+
+
+export const counterReducer = (state = initialState, action) => {
     switch (action.type) {
         case TYPE.INCREMENT:
             return {
@@ -34,14 +35,25 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter - 1
             }
+        default:
+            return state
+
+    }
+}
+
+//reset Reducer
+export const resetReducer = (state=initialState,action)=>{
+    switch (action.type) {
         case TYPE.RESET:
+            
             return {
                 ...state,
-                counter: 0
+                counter:0
             }
+    
         default:
             return state
     }
 }
 
-export default rootReducer
+// export default rootReducer

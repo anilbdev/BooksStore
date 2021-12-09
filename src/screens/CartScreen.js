@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { StyleSheet, Text, View,Button } from 'react-native'
 //custom import
-import {increment,decrement} from '../redux/reducer'
+import {increment,decrement} from '..'
 
 const CartScreen = () => {
     const counter =useSelector((state) =>{

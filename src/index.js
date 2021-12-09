@@ -5,7 +5,8 @@ export {default as books} from './data/books'
 export {default as ListItem} from './components/ListItem'
 export { default as Button} from './components/Button'
 export {default as store} from './redux/store'
-export {default as TYPE} from './stringConstants/actions'
-export {increment,decrement} from './redux/reducer'
-// export {default as rootReducer} from './redux/reducer'
+export {TYPE} from './stringConstants/actions'
+export {increment,decrement} from './redux/actions'
+
+
 

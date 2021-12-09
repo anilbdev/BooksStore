@@ -1,21 +1,7 @@
-// import {TYPE} from '../index'
-// console.log(TYPE)
+import {TYPE} from '../stringConstants/actions'
 
-export const TYPE = {
-    INCREMENT: 'INCREMENT',
-    DECREMENT: 'DECREMENT',
-    RESET: 'RESET'
-}
-//action creator
-export const increment = () => ({
-    type: TYPE.INCREMENT
-})
-export const decrement = () => ({
-    type: TYPE.DECREMENT
-})
-export const reset = () => ({
-    type: TYPE.RESET
-})
+
+
 
 const initialState = {
     counter: 0

@@ -1,13 +1,24 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React,{useLayoutEffect} from 'react'
+import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
+    useLayoutEffect(()=>{
+       navigation.setOptions({
+           headerRight:()=>(
+            <TouchableOpacity
+            onPress={()=>navigation.navigate('Cart')}
+            >
+                 <Icon name="shopping-cart" size={30} color="#900" />
+            </TouchableOpacity>
+           )
+       }) 
+    })
     return (
         <View>
             <Text>Home Screen</Text>
-            <Icon name="shopping-cart" size={30} color="#900" />
+           
         </View>
     )
 }

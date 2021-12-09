@@ -2,7 +2,11 @@ import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 //custom import
-import { books } from '..';
+import { 
+    books,
+    ListItem,
+    
+} from '..';
 const HomeScreen = ({ navigation }) => {
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -20,12 +24,12 @@ const HomeScreen = ({ navigation }) => {
             <Text>Home Screen</Text>
             <FlatList
                 data={books}
-                keyExtractor={(book) => book.auther}
+                keyExtractor={(book) =>book.auther}
                 renderItem={(book) => {
                     return (
                         <ScrollView>
                             <Text>{book.item.title}</Text>
-                            <Text>{book.item.auther}</Text>
+                            <ListItem />
                         </ScrollView>
                     )
                 }}

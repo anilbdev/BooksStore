@@ -1,0 +1,5 @@
+export const TYPE = {
+    INCREMENT:'INCREMENT',
+    DECREMENT: 'DECREMENT',
+    RESET: 'RESET'
+}

@@ -8,9 +8,9 @@ import { store } from './src'
 
 const App = () => {
     return (
-        // <Provider>
+        <Provider store={store}>
               <HomeStack/>
-        // </Provider>
+        </Provider>
           
       
     )

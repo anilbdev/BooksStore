@@ -1,28 +1,37 @@
-import React,{useLayoutEffect} from 'react'
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
+import React, { useLayoutEffect } from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
-
-const HomeScreen = ({navigation}) => {
-    useLayoutEffect(()=>{
-       navigation.setOptions({
-           headerRight:()=>(
-            <TouchableOpacity
-            onPress={()=>navigation.navigate('Cart')}
-            >
-                 <Icon name="shopping-cart" size={30} color="#900" />
-            </TouchableOpacity>
-           )
-       }) 
-    },[navigation])
+//custom import
+import { books } from '..';
+const HomeScreen = ({ navigation }) => {
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Cart')}
+                >
+                    <Icon name="shopping-cart" size={30} color="#900" />
+                </TouchableOpacity>
+            )
+        })
+    }, [navigation])
     return (
         <View>
             <Text>Home Screen</Text>
-           
+            <FlatList
+                data={books}
+                keyExtractor={(book) => book.auther}
+                renderItem={(book) => {
+                    return (
+                        <ScrollView>
+                            <Text>{book.item.title}</Text>
+                            <Text>{book.item.auther}</Text>
+                        </ScrollView>
+                    )
+                }}
+            />
         </View>
     )
 }
-
 export default HomeScreen
-
 const styles = StyleSheet.create({})

@@ -6,9 +6,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '..'
 const ListItem = ({ book }) => {
     const dispatch = useDispatch()
-    const cart = useSelector(state => state.cartReducer)
-    console.log('listItem cart>>', cart)
-    console.log('listItem boo>>', book)
+    const cart = useSelector(state => state.cartReducer)   
+    if(!book){
+        return null
+    }
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>

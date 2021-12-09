@@ -2,18 +2,22 @@ import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { StyleSheet, Text, View,Button } from 'react-native'
 //custom import
-import {increment,decrement} from '..'
+import {
+    increment,
+    decrement,
+    ListItem
+} from '..'
+
 
 const CartScreen = () => {
-    const counter =useSelector((state) =>{
+    const cart =useSelector((state) =>{
       
-        return state.counterReducer})
+        return state.cartReducer})
+        console.log('cart SCREEN>>>>>>>>',cart)
     const dispatch = useDispatch()
     return (
         <View>
-            <Button onPress={()=>dispatch(increment())} title='increase' />
-            <Button onPress={()=>dispatch(decrement())} title='decrease' />
-            <Text>{counter}</Text>
+            <ListItem/>
         </View>
     )
 }

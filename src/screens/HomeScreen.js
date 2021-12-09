@@ -2,10 +2,9 @@ import React, { useLayoutEffect } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 //custom import
-import { 
+import {
     books,
     ListItem,
-    
 } from '..';
 const HomeScreen = ({ navigation }) => {
     useLayoutEffect(() => {
@@ -20,22 +19,35 @@ const HomeScreen = ({ navigation }) => {
         })
     }, [navigation])
     return (
-        <View>
-            <Text>Home Screen</Text>
-            <FlatList
-                data={books}
-                keyExtractor={(book) =>book.auther}
-                renderItem={(book) => {
-                    return (
-                        <ScrollView>
-                            <Text>{book.item.title}</Text>
-                            <ListItem />
-                        </ScrollView>
-                    )
-                }}
-            />
+        <View style={styles.container}>
+           
+                
+                <FlatList
+                    data={books}
+                    keyExtractor={(book) => book.auther}
+                    renderItem={(book) => {
+                        return (
+                            <View style={styles.listItemContainer}>
+                                
+                                <ListItem 
+                                title={book.item.title} 
+                                auther={book.item.auther}
+                                />
+                            </View>
+                        )
+                    }}
+                />
+           
         </View>
     )
 }
 export default HomeScreen
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        borderWidth:2
+    },
+    listItemContainer:{
+        padding:15
+    }
+})

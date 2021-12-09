@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { Button } from '..'
 
-const ListItem = () => {
+const ListItem = ({title,auther}) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -12,11 +12,11 @@ const ListItem = () => {
             </View>
             <View style={styles.detailsContainer}>
                 <View style={styles.bookDetails}>
-                    <Text style={{fontSize:28}}>Title</Text>
-                    <Text style={{fontSize:20}}>Auther</Text>
+                    <Text style={{fontSize:28}}>{title}</Text>
+                    <Text style={{fontSize:20}}>{auther}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <Button/>
+                    <Button label='Add +' buttonColor='#4a8bcb'/>
                 </View>
 
             </View>

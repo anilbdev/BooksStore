@@ -7,7 +7,7 @@ import {increment,decrement} from '..'
 const CartScreen = () => {
     const counter =useSelector((state) =>{
       
-        return state.counterReducer.counter})
+        return state.counterReducer})
     const dispatch = useDispatch()
     return (
         <View>

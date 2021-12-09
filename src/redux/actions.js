@@ -10,5 +10,11 @@ export const decrement = () => ({
 export const reset = () => ({
     type: TYPE.RESET
 })
+export const addToCart = () => ({
+    type: TYPE.ADD_TO_CART
+})
+export const removeFromCart = ()=>({
+    type:TYPE.REMOVE_FROM_CART
+})
 
 

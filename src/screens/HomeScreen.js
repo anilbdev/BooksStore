@@ -14,7 +14,7 @@ const HomeScreen = ({navigation}) => {
             </TouchableOpacity>
            )
        }) 
-    })
+    },[navigation])
     return (
         <View>
             <Text>Home Screen</Text>

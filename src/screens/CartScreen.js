@@ -1,10 +1,17 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { useSelector,useDispatch } from 'react-redux';
+import { StyleSheet, Text, View,Button } from 'react-native'
+//custom import
+import {increment,decrement} from '../redux/reducer'
 
 const CartScreen = () => {
+    const counter =useSelector(state=>state.counter)
+    const dispatch = useDispatch()
     return (
         <View>
-            <Text>Cart Screen</Text>
+            <Button onPress={()=>dispatch(increment())} title='increase' />
+            <Button onPress={()=>dispatch(decrement())} title='decrease' />
+            <Text>{counter}</Text>
         </View>
     )
 }

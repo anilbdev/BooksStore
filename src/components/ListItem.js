@@ -2,7 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { Button } from '..'
 
-const ListItem = ({title,auther}) => {
+const ListItem = ({book}) => {
+    console.log('book prop>>',book);
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -12,8 +13,8 @@ const ListItem = ({title,auther}) => {
             </View>
             <View style={styles.detailsContainer}>
                 <View style={styles.bookDetails}>
-                    <Text style={{fontSize:28}}>{title}</Text>
-                    <Text style={{fontSize:20}}>{auther}</Text>
+                    <Text style={{fontSize:28}}>{book.title}</Text>
+                    <Text style={{fontSize:20}}>{book.auther}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button label='Add +' buttonColor='#4a8bcb'/>

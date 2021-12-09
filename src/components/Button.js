@@ -1,9 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native'
+import { useDispatch,useSelector } from 'react-redux'
+//custom import
+import {addToCart,removeFromCart} from '..'
 
 const Button = ({label,buttonColor}) => {
+    const dispatch = useDispatch()
     return (
-       <TouchableOpacity style={{...styles.button,backgroundColor:buttonColor}}>
+       <TouchableOpacity 
+       
+       style={{...styles.button,backgroundColor:buttonColor}}>
            <Text style={{color:'#fff'}}>{label}</Text>
        </TouchableOpacity>
     )

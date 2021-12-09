@@ -29,9 +29,8 @@ const HomeScreen = ({ navigation }) => {
                         return (
                             <View style={styles.listItemContainer}>
                                 
-                                <ListItem 
-                                title={book.item.title} 
-                                auther={book.item.auther}
+                                <ListItem
+                                book={book.item}                                
                                 />
                             </View>
                         )

@@ -6,7 +6,7 @@ export {default as ListItem} from './components/ListItem'
 export { default as Button} from './components/Button'
 export {default as store} from './redux/store'
 export {TYPE} from './stringConstants/actions'
-export {increment,decrement} from './redux/actions'
+export {increment,decrement,addToCart,removeFromCart} from './redux/actions'
 
 
 

@@ -11,9 +11,14 @@ const HomeScreen = ({ navigation }) => {
         navigation.setOptions({
             headerRight: () => (
                 <TouchableOpacity
+                style={styles.cartButtonContainer}
                     onPress={() => navigation.navigate('Cart')}
                 >
+                   
                     <Icon name="shopping-cart" size={30} color="#900" />
+                    <View style={styles.cartCount}>
+                        <Text style={styles.cartCountText}>0</Text>
+                    </View>
                 </TouchableOpacity>
             )
         })
@@ -48,5 +53,24 @@ const styles = StyleSheet.create({
     },
     listItemContainer:{
         padding:15
+    },
+    cartButtonContainer:{
+        position:'relative'
+    },
+    cartCount:{
+        height:30,
+        width:30,
+        borderRadius:15,
+        backgroundColor:'green',
+        position:'absolute',
+        marginLeft:-15,
+        marginTop:10,
+        justifyContent:'center',
+        alignItems:'center',
+        flex:1
+    },
+    cartCountText:{
+        
     }
+
 })

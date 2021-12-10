@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { StyleSheet, Text, View, FlatList, Image,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
 //custom import
 import {
     increment,
@@ -9,9 +9,7 @@ import {
     removeFromCart,
     Button
 } from '..'
-
-const renderCartList = (book,dispatch) => {
-   
+const renderCartList = (book, dispatch) => {
     return (
         <View style={styles.cartListContainer}>
             <View style={styles.imageContainer}>
@@ -25,7 +23,6 @@ const renderCartList = (book,dispatch) => {
                     <Text style={{ fontSize: 20 }}>{book.item.auther}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                   
                 </View>
             </View>
         </View>
@@ -35,24 +32,26 @@ const CartScreen = () => {
     const cart = useSelector((state) => {
         return state.cartReducer
     })
-  
     const dispatch = useDispatch()
     return (
         <View style={styles.container}>
-            <View style={styles.listItemContainer}>
-                <FlatList
-                    data={cart}
-                    keyExtractor={cart => cart.title}
-                    renderItem={(book)=>renderCartList(book,dispatch)}
-                />
-            </View>
-
+            {
+                cart.length !== 0
+                    ?
+                    <View style={styles.listItemContainer}>
+                        <FlatList
+                            data={cart}
+                            keyExtractor={cart => cart.title}
+                            renderItem={(book) => renderCartList(book, dispatch)}
+                        />
+                    </View>
+                    : <View style={styles.emptyCartTextContainer}>
+                        <Text style={styles.emptyCartText}>Your Cart is Empty!</Text>
+                    </View>}
         </View>
     )
 }
-
 export default CartScreen
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -75,5 +74,14 @@ const styles = StyleSheet.create({
     },
     bookDetails: {
         padding: 10
+    },
+    emptyCartTextContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    emptyCartText: {
+        fontSize:26
+      
     }
 })

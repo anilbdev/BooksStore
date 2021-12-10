@@ -9,7 +9,7 @@ import {
     removeFromCart,
     Button
 } from '..'
-const renderCartList = (book, dispatch) => {
+const renderCartList = (book) => {
     return (
         <View style={styles.cartListContainer}>
             <View style={styles.imageContainer}>
@@ -42,7 +42,7 @@ const CartScreen = () => {
                         <FlatList
                             data={cart}
                             keyExtractor={cart => cart.title}
-                            renderItem={(book) => renderCartList(book, dispatch)}
+                            renderItem={(book) => renderCartList(book)}
                         />
                     </View>
                     : <View style={styles.emptyCartTextContainer}>

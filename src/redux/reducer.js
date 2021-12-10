@@ -16,35 +16,3 @@ export const cartReducer = (state = [], action) => {
             return state
     }
 }
-export const counterReducer = (state = 0, action) => {
-    switch (action.type) {
-        case TYPE.INCREMENT:
-            return state+1
-            // {
-            //     ...state,
-            //     counter: state.counter + 1
-            // }
-        case TYPE.DECREMENT:
-            return  state-1
-            // {
-            //     ...state,
-            //     counter: state.counter - 1
-            // }
-        default:
-            return state
-    }
-}
-//reset Reducer
-export const resetReducer = (state = 0, action) => {
-    switch (action.type) {
-        case TYPE.RESET:
-            return state=0
-            //  {
-            //     ...state,
-            //     counter: 0
-            // }
-        default:
-            return state
-    }
-}
-// export default rootReducer

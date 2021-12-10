@@ -1,12 +1,11 @@
 import {createStore,combineReducers} from 'redux'
 
-import {counterReducer,resetReducer,cartReducer} from './reducer'
+import {cartReducer} from './reducer'
 
 
 //Root reducer
 const rootReducer = combineReducers({
-    counterReducer,
-    resetReducer,
+   
     cartReducer
 })
 const store = createStore(rootReducer)

@@ -17,9 +17,12 @@ const HomeScreen = ({ navigation }) => {
                     onPress={() => navigation.navigate('Cart')}
                 >
                     <Icon name="shopping-cart" size={30} color="#900" />
-                    <View style={styles.cartCount}>
-                        <Text style={styles.cartCountText}>{cart.length}</Text>
-                    </View>
+                    {cart.length > 0
+                        ? <View style={styles.cartCount}>
+                            <Text style={styles.cartCountText}>{cart.length}</Text>
+                        </View>
+                        :null}
+
                 </TouchableOpacity>
             )
         })

@@ -6,7 +6,8 @@ import {cartReducer} from './reducer'
 //Root reducer
 const rootReducer = combineReducers({
    
-    cartReducer
+    cartReducer,
+ 
 })
 const store = createStore(rootReducer)
 

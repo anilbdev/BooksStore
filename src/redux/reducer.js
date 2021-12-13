@@ -1,7 +1,5 @@
 import { TYPE } from '../stringConstants/actions'
-const initialState = {
-    counter: 0
-}
+
 //cart reducer
 export const cartReducer = (state = [], action) => {
     switch (action.type) {
